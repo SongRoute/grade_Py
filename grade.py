@@ -23,7 +23,7 @@ def calculate_grades(student):
     return student
 
 def print_results(student):
-    print(f"이름: {student['이름']}, 학번: {student['학번']}, 총점: {student['총점']}, 평균: {student['평균']}, 학점: {student['학점']}")
+    print(f"{student['학번']}\t{student['이름']}\t{student['영어']}\t{student['C언어']}\t{student['파이썬']}\t{student['총점']}\t{student['평균']}     {student['학점']}")
 
 def main():
     students = []
@@ -36,9 +36,16 @@ def main():
         
     students.sort(key=lambda x: x['평균'], reverse=True)
 
-    print("\n[결과]")
+    print("\n\t\t[결과]")
+    print("====================================================================\n")
+    print("학번    이름    영어    C-언어  파이썬  총점    평균   학점       \n")
+    print("====================================================================\n")
+
+
     for student in students:
         print_results(student)
+    
+    print("====================================================================\n")
 
 if __name__ == "__main__":
     main()
